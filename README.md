@@ -1,56 +1,48 @@
-## JSON-SERVER
+# JSON-SERVER
 
-- Crea un nuovo progetto NodeJS
-
-``` sh
-npm init -y
-```
-
-- Installa libreria json-server
-
-``` sh
-npm install json-server
-```
-
-- Crea i file __index.json__ e copia il codice:
-
-``` js
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
-
-const port = 3000;
-
-server.use(middlewares);
-server.use(router);
-
-server.listen(port, () => {
-  console.log(`JSON Server è stato avviato PORTA=${port}`);
-});
-```
-
-- Crea il file __db.json__ e inizializzalo nel seguente modo:
-
-``` json
-{}
-```
+Clona il progetto
 
 - Per eseguire il codice in development con nodemon
 
 ``` sh
-node dev
+npm run dev
 ```
 
 - Per eseguire il codice
 
 ``` sh
-node start
+npm run start
 ```
 
-<br>
+<br><br><br>
 
----
+# Esempi di cURL
+
+- Ottenimento
+
+``` sh
+curl -X GET -H "Content-Type: application/json" http://localhost:3000/liste/
+```
+
+- Aggiornamento
+
+``` sh
+curl -X PATCH -H "Content-Type: application/json" -d "{\"nome\": \"sia\", \"data\": \"01-07-2023\" }" http://localhost:3000/liste/1
+```
+
+- Creazione
+
+``` sh
+curl -X POST -H "Content-Type: application/json" -d "{\"nome\": \"sia\", \"data\": \"01-07-2023\" }" http://localhost:3000/liste/
+```
+
+- Cancellazione
+
+``` sh
+curl -X DELETE -H "Content-Type: application/json" http://localhost:3000/liste/
+```
+
+<br><br><br>
 
 # Configurazione docker
 

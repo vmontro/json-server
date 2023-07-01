@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "npx nodemon index.js"
+    "dev": "npx nodemon index.js",
+    "build": "pkg index.js --targets node14-win-x64"
   },
   "keywords": [],
   "author": "Vincenzo Montrone",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.17.3"
+    "json-server": "^0.17.3",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

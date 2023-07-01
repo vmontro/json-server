@@ -4,7 +4,7 @@ const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 const jwt = require('jsonwebtoken');
 const TOKEN = 'il_tuo_segreto';
-
+const PORT = 8086;
 // Funzione di verifica del token
 function authenticateToken(req, res, next) {
   const authToken = req.headers.authorization;
@@ -27,6 +27,6 @@ server.use(middlewares);
 server.use(authenticateToken); // Utilizza il middleware di verifica del token
 server.use(router);
 
-server.listen(3000, () => {
-  console.log('JSON Server is running');
+server.listen(PORT, () => {
+  console.log(`Server OTP in ascolto su porta ${PORT}`);
 });

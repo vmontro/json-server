@@ -1,46 +1,85 @@
 # JSON-SERVER
 
-Clona il progetto
+1. Clona il progetto
 
-- Per eseguire il codice in development con nodemon
+
+- Eseguire il codice
+
+``` sh
+npm run start
+```
+
+- Eseguire il codice in development con __nodemon__
 
 ``` sh
 npm run dev
 ```
 
-- Per eseguire il codice
+
+- Compilare .exe
 
 ``` sh
-npm run start
+npm run build
 ```
 
 <br><br><br>
 
 # Esempi di cURL
 
-- Ottenimento
+## NO TOKEN
+
+- GET
 
 ``` sh
 curl -X GET -H "Content-Type: application/json" http://localhost:3000/liste/
 ```
 
-- Aggiornamento
+- PATCH
 
 ``` sh
 curl -X PATCH -H "Content-Type: application/json" -d "{\"nome\": \"sia\", \"data\": \"01-07-2023\" }" http://localhost:3000/liste/1
 ```
 
-- Creazione
+- POST
 
 ``` sh
 curl -X POST -H "Content-Type: application/json" -d "{\"nome\": \"sia\", \"data\": \"01-07-2023\" }" http://localhost:3000/liste/
 ```
 
-- Cancellazione
+- DELETE
 
 ``` sh
 curl -X DELETE -H "Content-Type: application/json" http://localhost:3000/liste/
 ```
+
+<br><br>
+
+## CON TOKEN
+
+- GET
+
+``` sh
+curl -X GET -H "Authorization: Bearer IL_TUO_JWT" http://localhost:3000/liste/
+```
+
+- PATCH
+
+``` sh
+curl -X PATCH -H "Authorization: Bearer IL_TUO_JWT" -d "{\"nome\": \"sia\", \"data\": \"01-07-2023\" }" http://localhost:3000/liste/1
+```
+
+- POST
+
+``` sh
+curl -X POST -H "Authorization: Bearer IL_TUO_JWT" -d "{\"nome\": \"sia\", \"data\": \"01-07-2023\" }" http://localhost:3000/liste/
+```
+
+- DELETE
+
+``` sh
+curl -X DELETE -H "Authorization: Bearer IL_TUO_JWT" http://localhost:3000/liste/1
+```
+
 
 <br><br><br>
 
